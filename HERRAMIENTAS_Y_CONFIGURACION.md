@@ -18,7 +18,7 @@
 | Git para Windows | **2.46.0.windows.1** | `git --version` |
 | Lenguaje de aplicación | **C#** | Proyecto .NET MAUI |
 | Interfaz de usuario | **XAML** | Archivos `App.xaml`, `AppShell.xaml` y páginas |
-| Framework objetivo (`TargetFrameworks`) | **Pendiente de confirmar en el `.csproj`** | El SDK 11 no determina el framework objetivo; se seleccionó .NET 10 durante la creación, pero falta comprobar el archivo |
+| Framework objetivo (`TargetFrameworks`) | **.NET 10.0 (LTS)**: `net10.0-android`, `net10.0-ios`, `net10.0-maccatalyst`, `net10.0-windows10.0.19041.0` | Resultado de `Select-String` en `GlamGoApp.csproj` compartido el 20/11/2026 |
 | Android SDK / versión de plataforma exacta | **Pendiente de registrar** | Consultar SDK Manager o detalles de compilación; la versión del workload no es la versión de Android SDK |
 | Sistema operativo de desarrollo | **Windows 11 (observado)**; edición/build sin verificar | Capturas de escritorio |
 | Dispositivo de pruebas | **Android físico conectado por USB**; modelo y versión de Android sin verificar | Ejecución mostrada en teléfono |
@@ -44,7 +44,7 @@ git remote -v
 git log --oneline -5
 ```
 
-**Verificación adicional pendiente:** abrir `GlamGoApp/GlamGoApp/GlamGoApp.csproj` y copiar el valor de `TargetFrameworks` para documentar con exactitud si el proyecto está dirigido a .NET 10 o .NET 11.
+**Framework confirmado:** el archivo `GlamGoApp/GlamGoApp/GlamGoApp.csproj` declara destinos **.NET 10** para Android, iOS, Mac Catalyst y Windows. El SDK de consola instalado es **11.0.100**; no debe confundirse con el framework objetivo. La ejecución se ha comprobado únicamente en Android físico y Windows.
 
 ## 4. Instrucciones de reproducción
 
@@ -68,6 +68,6 @@ Para la entrega final, adjuntar capturas de la estructura del repositorio, commi
 ## 6. Estado y pendientes
 
 **Completado:** proyecto MAUI base, ejecución Windows/Android, repositorio público, commits y archivos de contexto.  
-**Pendiente:** registrar `TargetFrameworks` y versión exacta de Android SDK, añadir este reporte y el README al repositorio, e implementar las funcionalidades reales de GlamGo en los incrementos correspondientes.
+**Pendiente:** registrar la versión exacta de Android SDK, adjuntar las capturas de evidencia a la entrega e implementar las funcionalidades reales de GlamGo en los incrementos correspondientes. El framework objetivo ya está confirmado y el README y este reporte ya se publicaron en el repositorio.
 
 **Nota técnica:** Node.js/Express y PostgreSQL forman parte de la arquitectura prevista, pero no se reportan como instalados ni configurados porque no hay evidencia de sus versiones en este entorno.

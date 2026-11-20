@@ -10,15 +10,16 @@ Aplicación móvil para descubrir establecimientos y profesionales de belleza, c
 
 - .NET MAUI, C# y XAML para la aplicación móvil.
 - Visual Studio 2026 Community 18.12.1 (canal estable).
-- .NET SDK instalado: 11.0.100. **El framework objetivo debe verificarse** en `GlamGoApp/GlamGoApp/GlamGoApp.csproj`, en la propiedad `TargetFrameworks` (puede ser .NET 10 aunque esté instalado SDK 11).
+- **Framework objetivo: .NET 10.0 (LTS)**, confirmado en `GlamGoApp/GlamGoApp/GlamGoApp.csproj` mediante `TargetFrameworks`. Plataformas configuradas: Android (`net10.0-android`), iOS (`net10.0-ios`), Mac Catalyst (`net10.0-maccatalyst`) y Windows (`net10.0-windows10.0.19041.0`). Solo se ha verificado la ejecución en Android y Windows.
+- **.NET SDK instalado: 11.0.100**. El SDK instalado y el framework objetivo del proyecto son versiones diferentes.
 - Git 2.46.0.windows.1.
 - Backend previsto: Node.js/Express; base de datos prevista: PostgreSQL. No son necesarios para ejecutar la pantalla de demostración actual.
 
 ## Requisitos para ejecutar
 
-1. Windows con Visual Studio 2026 Community o una versión compatible con el framework objetivo del proyecto.
+1. Windows con Visual Studio 2026 Community o una versión compatible con .NET 10 y .NET MAUI.
 2. Carga de trabajo **.NET MAUI** instalada, con herramientas y SDK de Android para probar en teléfono.
-3. SDK de .NET compatible con el valor `TargetFrameworks` del `.csproj`.
+3. SDK de .NET compatible con los destinos .NET 10 del `.csproj` (en el equipo de desarrollo se utilizó SDK 11.0.100).
 4. Git para clonar el repositorio.
 5. Para Android físico: teléfono Android, cable USB de datos, opciones de desarrollador y depuración USB activadas.
 
@@ -49,7 +50,7 @@ dotnet workload list
 git --version
 ```
 
-Para comprobar el framework del proyecto, abre `GlamGoApp/GlamGoApp/GlamGoApp.csproj` y busca `TargetFrameworks`. No debe confundirse el SDK global con el framework objetivo de la aplicación.
+El framework del proyecto ya fue confirmado mediante `TargetFrameworks` en `GlamGoApp/GlamGoApp/GlamGoApp.csproj`: .NET 10 para Android, iOS, Mac Catalyst y Windows. No debe confundirse el SDK global 11.0.100 con el framework objetivo .NET 10.
 
 ## Estructura general
 

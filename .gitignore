@@ -1,0 +1,16 @@
+# Visual Studio
+.vs/
+**/.vs/
+*.user
+*.suo
+
+# Compilaciones .NET
+**/bin/
+**/obj/
+
+# Archivos temporales
+*.tmp
+*.log
+
+# Configuraciones locales
+.vscode/
